@@ -17,28 +17,45 @@
   <label for="nom">Nom : </label>
   <input type="text" formControlName="nom" />
   <span *ngIf="this.user.controls['nom'].invalid && submitted"
-    >* Nom obligatoire</span
+    >* Le nom n'est pas valide</span
   >
-  <!-- <span *ngIf="this.user.controls['nom'].errors?"></span> -->
+  <span *ngIf="this.user.controls['nom'].untouched && submitted"
+    >* Veuillez remplir le champ nom</span
+  >
   <label for="prenom">Prénom : </label>
   <input type="text" formControlName="prenom" />
   <span *ngIf="this.user.controls['prenom'].invalid && submitted"
-    >* Prénom obligatoire</span
+    >* Le prénom n'est pas valide</span
   >
+  <span *ngIf="this.user.controls['prenom'].untouched && submitted"
+    >* Veuillez remplir le champ prénom</span
+  >
+
   <label for="email">Email : </label>
   <input type="text" formControlName="email" />
   <span *ngIf="this.user.controls['email'].invalid && submitted"
-    >* Email obligatoire</span
+    >* L'email n'est pas valide</span
   >
+  <span *ngIf="this.user.controls['email'].untouched && submitted"
+    >* Veuillez remplir le champ email</span
+  >
+
   <label for="nom">Entreprise : </label>
   <input type="text" formControlName="entreprise" />
   <span *ngIf="this.user.controls['entreprise'].invalid && submitted"
-    >* Entreprise obligatoire</span
+    >* Le nom d'entreprise n'est pas valide
+  </span>
+  <span *ngIf="this.user.controls['entreprise'].untouched && submitted"
+    >* Veuillez remplir le champ entreprise</span
   >
+
   <label for="telephone">Téléphone : </label>
   <input type="text" formControlName="telephone" />
   <span *ngIf="this.user.controls['telephone'].invalid && submitted"
-    >* Téléphone obligatoire</span
+    >* Le numéro de téléphone n'est pas valide</span
+  >
+  <span *ngIf="this.user.controls['nom'].untouched && submitted"
+    >* Veuillez remplir le champ téléphone</span
   >
 
   <button type="submit">Ajouter</button>
