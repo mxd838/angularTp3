@@ -1,0 +1,45 @@
+<div *ngFor="let user of users">
+  <div class="background">
+    <div class="card-header">
+      {{ user.entreprise }}
+      <div class="card">
+        <div class="name">{{ user.nom }} {{ user.prenom }}</div>
+        <div class="info">
+          <p>Email : {{ user.email }}</p>
+          <p>Téléphone : {{ user.telephone }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+  <label for="nom">Nom : </label>
+  <input type="text" formControlName="nom" />
+  <span *ngIf="this.user.controls['nom'].invalid && submitted"
+    >* Nom obligatoire</span
+  >
+  <!-- <span *ngIf="this.user.controls['nom'].errors?"></span> -->
+  <label for="prenom">Prénom : </label>
+  <input type="text" formControlName="prenom" />
+  <span *ngIf="this.user.controls['prenom'].invalid && submitted"
+    >* Prénom obligatoire</span
+  >
+  <label for="email">Email : </label>
+  <input type="text" formControlName="email" />
+  <span *ngIf="this.user.controls['email'].invalid && submitted"
+    >* Email obligatoire</span
+  >
+  <label for="nom">Entreprise : </label>
+  <input type="text" formControlName="entreprise" />
+  <span *ngIf="this.user.controls['entreprise'].invalid && submitted"
+    >* Entreprise obligatoire</span
+  >
+  <label for="telephone">Téléphone : </label>
+  <input type="text" formControlName="telephone" />
+  <span *ngIf="this.user.controls['telephone'].invalid && submitted"
+    >* Téléphone obligatoire</span
+  >
+
+  <button type="submit">Ajouter</button>
+</form>
