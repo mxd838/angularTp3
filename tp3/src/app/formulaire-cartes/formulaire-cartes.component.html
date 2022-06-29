@@ -17,7 +17,7 @@
   <label for="nom">Nom : </label>
   <input type="text" formControlName="nom" />
   <span *ngIf="this.user.controls['nom'].invalid && submitted"
-    >* Le nom n'est pas valide</span
+    >* Le nom n'est pas valide (2 caractères minimum)</span
   >
   <span *ngIf="this.user.controls['nom'].untouched && submitted"
     >* Veuillez remplir le champ nom</span
@@ -25,7 +25,7 @@
   <label for="prenom">Prénom : </label>
   <input type="text" formControlName="prenom" />
   <span *ngIf="this.user.controls['prenom'].invalid && submitted"
-    >* Le prénom n'est pas valide</span
+    >* Le prénom n'est pas valide (2 caractères minimum)</span
   >
   <span *ngIf="this.user.controls['prenom'].untouched && submitted"
     >* Veuillez remplir le champ prénom</span
@@ -43,7 +43,7 @@
   <label for="nom">Entreprise : </label>
   <input type="text" formControlName="entreprise" />
   <span *ngIf="this.user.controls['entreprise'].invalid && submitted"
-    >* Le nom d'entreprise n'est pas valide
+    >* Le nom d'entreprise n'est pas valide (2 caractères minimum)
   </span>
   <span *ngIf="this.user.controls['entreprise'].untouched && submitted"
     >* Veuillez remplir le champ entreprise</span
